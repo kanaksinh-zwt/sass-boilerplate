@@ -1,7 +1,20 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+// Extra large devices (large desktops, 1200px and up)
+@include breakpoint(xl) {
+   // your code here
+}
 
+// Large devices (desktops, 992px and up)
+@include breakpoint(lg) {
+   // your code here
+}
+
+// Medium devices (tablets, 768px and up)
+@include breakpoint(md) {
+   // your code here
+}
 
 // Small devices (landscape phones, 576px and up)
 @include breakpoint(sm) {
@@ -15,20 +28,5 @@
 
 // iPhone X landscape
 @include breakpoint(smlandscape) {
-   // your code here
-}
-
-// Medium devices (tablets, 768px and up)
-@include breakpoint(md) {
-   // your code here
-}
-
-// Large devices (desktops, 992px and up)
-@include breakpoint(lg) {
-   // your code here
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@include breakpoint(xl) {
    // your code here
 }
