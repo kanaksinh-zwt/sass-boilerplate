@@ -170,7 +170,6 @@ img[src$=".svg"] {
 a {
   color: $brand-primary;
   transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
-
   &:hover,
   &:focus {
     color: $black;
