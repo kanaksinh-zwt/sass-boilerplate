@@ -2,26 +2,26 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 // Extra large devices (large desktops, 1200px and up)
-@include breakpoint(xl) {
+@include breakpoint(xl) { // min-width : 1200px
    // your code here
 }
 
-// Large devices (desktops, 992px and up)
+// Large devices (desktops, 1024px and 1199px)
 @include breakpoint(lg) {
    // your code here
 }
 
-// Medium devices (tablets, 768px and up)
+// Medium devices (tablets, 768px and 1023px)
 @include breakpoint(md) {
    // your code here
 }
 
-// Small devices (landscape phones, 576px and up)
+// Small devices (landscape phones, less than 767px)
 @include breakpoint(sm) {
    // your code here
 }
 
-// Extra small devices (portrait phones, less than 576px)
+// Extra small devices (portrait phones, less than 640px)
 @include breakpoint(xs) {
    // your code here
 }
@@ -29,4 +29,8 @@
 // iPhone X landscape
 @include breakpoint(smlandscape) {
    // your code here
+}
+// extra
+@media (min-width : $xl) and (max-width : $xxl){
+
 }

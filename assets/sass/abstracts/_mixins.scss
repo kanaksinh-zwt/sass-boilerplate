@@ -12,10 +12,10 @@
     @media (min-height : 375px) and (max-width : 812px) and (orientation : landscape) { @content; }
   } @else if $size == md { // Medium devices (tablets, 768px and up)
     @media (min-width: $md) and (max-width: $lg - 1) { @content; }
-  } @else if $size == lg { // Large devices (desktops, 1024px and up)
-    @media (min-width: $lg) and (max-width: $xl) { @content; }
+  } @else if $size == lg { // Large devices (desktops, 1024px and 1199px)
+    @media (min-width: $lg) and (max-width: $xl - 1) { @content; }
   } @else if $size == xl { // Extra large devices (large desktops, 1200px and up)
-    @media (min-width: $xl+1 ) { @content; }
+    @media (min-width: $xl) { @content; }
   }
 }
 
