@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 /* responsive nav for small devices */
-.mobilenav{
+.mobilenav {
     .hamburger {
         display: flex;
         align-items: center;
@@ -14,20 +14,24 @@
         width: 50px;
         background-color: transparent;
         text-align: center;
-        &:not(.close){
+
+        &:not(.close) {
             position: absolute;
             top: 20px;
             right: 20px;
             z-index: 99;
         }
-        &.close{
+
+        &.close {
             padding: 10px;
-             .wrap {
+
+            .wrap {
                 position: relative;
                 display: block;
                 width: 30px;
                 height: 30px;
             }
+
             .line {
                 position: absolute;
                 top: calc(50% - 2px);
@@ -35,17 +39,20 @@
                 margin: 0;
                 transform: rotate(45deg);
                 background-color: #fff;
-                &:last-child{
-                   transform: rotate(-45deg); 
+
+                &:last-child {
+                    transform: rotate(-45deg);
                 }
             }
         }
+
         &:hover,
-        &:focus{
+        &:focus {
             background-color: transparent;
             outline: none;
-            cursor: pointer; 
+            cursor: pointer;
         }
+
         .line {
             display: block;
             width: 30px;
@@ -53,9 +60,13 @@
             height: 4px;
             background-color: #e67e22;
         }
-        .wrap { display: block; }
+
+        .wrap {
+            display: block;
+        }
 
     }
+
     .menu-state {
         position: fixed;
         top: 0;
@@ -67,23 +78,33 @@
         background-color: #3ab4a6;
         transition: all 0.3s ease-in-out;
     }
+
     &.is-open {
-        .menu-state { left: 0; }
+        .menu-state {
+            left: 0;
+        }
     }
-    .nav-logo { padding: 15px; }
-    ul{
+
+    .nav-logo {
+        padding: 15px;
+    }
+
+    ul {
         position: relative;
         padding: 0;
         margin: 0;
         list-style: none;
-        ul{
+
+        ul {
             display: none;
         }
-        li{
+
+        li {
             position: relative;
             padding: 0;
             margin: 0;
             list-style: none;
+
             .caret {
                 position: absolute;
                 top: 3px;
@@ -92,9 +113,13 @@
                 width: 36px;
                 height: 36px;
                 cursor: pointer;
-                &:not(.trigger-caret) { pointer-events: none; }
+
+                &:not(.trigger-caret) {
+                    pointer-events: none;
+                }
+
                 &:after,
-                &:before{
+                &:before {
                     position: absolute;
                     content: '';
                     top: 0;
@@ -107,14 +132,19 @@
                     height: 2px;
                     background: #fff;
                 }
-                &:after{
+
+                &:after {
                     transform: rotate(-90deg);
                     transition: all .2s ease;
                 }
             }
+
             &.is-open {
-               > .caret:after { transform: rotate(0); }            
-            } 
+                >.caret:after {
+                    transform: rotate(0);
+                }
+            }
+
             a {
                 z-index: 2;
                 display: block;
@@ -124,20 +154,25 @@
                 font-size: 20px;
                 text-decoration: none;
                 color: #ffffff;
-            }   
+            }
+
             &.has-sub {
-                > a { padding-right: 40px; }
-            }  
+                >a {
+                    padding-right: 40px;
+                }
+            }
             li a {
                 padding-left: 30px;
                 font-size: 16px;
+
                 li a {
                     padding-left: 50px;
                     font-size: 15px;
                 }
-            }         
+            }
         }
     }
+
     .nav-backdrop {
         position: fixed;
         z-index: -1;
@@ -146,8 +181,9 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.4s ease-in;
-        background: rgba( 0, 0, 0, 0.8 );
+        background: rgba(0, 0, 0, 0.8);
     }
+
     &.is-open {
         .nav-backdrop {
             opacity: 1;
@@ -155,8 +191,9 @@
             visibility: visible;
         }
     }
+
     .menu-outer {
-        max-height: calc( 100vh - 80px );
+        max-height: calc(100vh - 80px);
         overflow-y: auto;
         padding-bottom: 60px;
     }

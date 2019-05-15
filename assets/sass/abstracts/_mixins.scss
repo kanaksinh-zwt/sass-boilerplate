@@ -20,7 +20,7 @@
 }
 
 // Responsive media grid breakpoint
-@mixin grid-breakpoint($size) { 
+@mixin grid-breakpoint($size) {
   @if $size == xs { // Small devices (landscape phones, less than 640px)
     @media (min-width: $xs+1) { @content; }
   } @else if $size == md { // Medium devices (tablets, less than 767px)

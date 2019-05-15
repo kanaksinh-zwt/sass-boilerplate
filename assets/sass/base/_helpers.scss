@@ -8,16 +8,17 @@
 .container {
   max-width: $container-width;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  width: 100%; 
- }
+  width: 100%;
+}
+
 .container-fluid {
-    width: 100%;
-    margin: auto;
-    padding-right: 50px;
-    padding-left: 50px;
+  width: 100%;
+  margin: auto;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 /* row and column */
@@ -28,15 +29,18 @@
   flex-wrap: wrap;
   margin-right: -20px;
   margin-left: -20px;
+
   &.no-gutters {
     margin-right: 0;
     margin-left: 0;
-    > [class*="cell-"] {
+
+    >[class*="cell-"] {
       padding-right: 0;
       padding-left: 0;
     }
   }
 }
+
 [class*="cell-"] {
   padding-left: 15px;
   padding-right: 15px;
@@ -208,30 +212,39 @@ $grid-columns: 12;
 }
 
 /*--- cell space ---*/
-$spaceamounts: (0,20,30,40,50); // Adjust this to include the pixel amounts you need.
+$spaceamounts: (0, 20, 30, 40, 50); // Adjust this to include the pixel amounts you need.
 $sidesy: (top, bottom); // Leave this variable alone
 $sidesx: (left, right); // Leave this variable alone
 
 @each $space in $spaceamounts {
   @each $side in $sidesy {
-    @if str-slice($side, 0, 1) == t AND str-slice($side, 0, 1) == b{
-      .m#{str-slice($side, 0, 1)}-#{$space},.my-#{$space}  {
+    @if str-slice($side, 0, 1)==t AND str-slice($side, 0, 1)==b {
+
+      .m#{str-slice($side, 0, 1)}-#{$space},
+      .my-#{$space} {
         margin-#{$side}: #{$space}px;
-      }  
-      .p#{str-slice($side, 0, 1)}-#{$space},.py-#{$space}  {
+      }
+
+      .p#{str-slice($side, 0, 1)}-#{$space},
+      .py-#{$space} {
         padding-#{$side}: #{$space}px;
-      } 
-    } 
+      }
+    }
   }
+
   @each $side in $sidesx {
-    @if str-slice($side, 0, 1) == l AND str-slice($side, 0, 1) == r{
-      .m#{str-slice($side, 0, 1)}-#{$space},.mx-#{$space}  {
+    @if str-slice($side, 0, 1)==l AND str-slice($side, 0, 1)==r {
+
+      .m#{str-slice($side, 0, 1)}-#{$space},
+      .mx-#{$space} {
         margin-#{$side}: #{$space}px;
-      }  
-      .p#{str-slice($side, 0, 1)}-#{$space},.px-#{$space}  {
+      }
+
+      .p#{str-slice($side, 0, 1)}-#{$space},
+      .px-#{$space} {
         padding-#{$side}: #{$space}px;
-      }  
-    } 
+      }
+    }
   }
 }
 
