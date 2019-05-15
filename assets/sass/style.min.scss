@@ -6,21 +6,21 @@
 // Configuration and helpers
 @import
  'abstracts/variables',
- 'abstracts/mixins';
+'abstracts/mixins';
 
 // Base stuff
-@import
+@import 
 'base/fonts',
 'base/normalize',
 'base/helpers',
 'base/typography';
 
 // Vendors
-@import
+@import 
 'vendors/slick';
 
 // Components
-@import
+@import 
 'components/button',
 'components/forms',
 'components/header',
@@ -28,6 +28,6 @@
 'components/footer';
 
 // Page-specific styles
-@import
+@import 
 'pages/home',
 'pages/default'; //global style code goes here
