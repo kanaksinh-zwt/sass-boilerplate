@@ -68,12 +68,15 @@ $textarea-height-base:      150px;
 /// Container's maximum width
 $container-width:   1200px !default;
 
-// media breakpoint
-$xs :  640px; // Extra small devices (portrait phones, less than 640px)
-$sm :  767px; // Small devices (landscape phones, less than 767px)
-$md :  $sm + 1; // Medium devices (tablets, 768px and up)
-$lg :  1024px; // Large devices (desktops, 1024px and up)
-$xl :  1200px; // Extra large devices (large desktops, 1200px and up)
-$xxl : 1400px; // Extra large devices (large desktops, 1400px and up)
+// A map of breakpoints.
+$breakpoints: (
+  'xs': 0,
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1200px
+);
 
+// spaceer : padding and margin
+$spaceamounts: (0, 20, 30, 40, 50);
 
