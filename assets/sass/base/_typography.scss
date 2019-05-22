@@ -97,6 +97,11 @@ p {
 
 ul {
 	padding-left: 20px;
+	margin-bottom: 15px;
+
+	ul {
+		margin-bottom: 0;
+	}
 
 	li {
 		padding-top: 6px;
@@ -109,23 +114,13 @@ ul {
 }
 
 ol {
-	padding-left: 20px;
-
-	li {
-		padding-top: 6px;
-		padding-bottom: 6px;
-
-		&:last-child {
-			padding-bottom: 0;
-		}
-	}
+	@extend ul;
 }
 
 blockquote {
 	position: relative;
 	display: block;
 	margin-bottom: 25px;
-	margin-top: 30px;
 	padding: 20px 20px;
 	text-align: left;
 	line-height: 2;

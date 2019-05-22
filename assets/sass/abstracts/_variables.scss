@@ -68,7 +68,7 @@ $textarea-height-base:      150px;
 /// Container's maximum width
 $container-width:   1200px !default;
 
-// A map of breakpoints.
+// media query breakpoints.
 $breakpoints: (
   'xs': 0,
   'sm': 640px,
@@ -77,6 +77,6 @@ $breakpoints: (
   'xl': 1200px
 );
 
-// spaceer : padding and margin
+// spacing : padding and margin
 $spaceamounts: (0, 20, 30, 40, 50);
 

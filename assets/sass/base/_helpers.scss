@@ -5,20 +5,20 @@
 /**
  * Main content containers
  */
- .container {
+.container {
 	width: 100%;
 	max-width: $container-width;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 20px;
 	padding-right: 20px;
-}
-
-.container-fluid {
-	width: 100%;
-	margin: auto;
-	padding-right: 50px;
-	padding-left: 50px;
+	
+	&-fluid {
+		width: 100%;
+		margin: auto;
+		padding-right: 50px;
+		padding-left: 50px;
+	}
 }
 
 /* row and column */
@@ -53,6 +53,14 @@
 	display: flex;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
+
+	&-inline {
+		display: inline-flex;
+	}
+
+	img {
+		align-self: center;
+	}
 }
 
 .flex-nowrap {
@@ -60,47 +68,47 @@
 	flex-wrap: nowrap;
 }
 
-.align-items-center {
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
+.align {
+	&-items-center {
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+
+	&-content-center {
+		-ms-flex-line-pack: center;
+		align-content: center;
+	}
+
+	&-items-end {
+		-ms-flex-align: end;
+		align-items: flex-end;
+	}
 }
 
-.align-content-center {
-	-ms-flex-line-pack: center;
-	align-content: center;
-}
+.justify {
+	&-content-center {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
 
-.align-items-end {
-	-ms-flex-align: end;
-	align-items: flex-end;
-}
+	&-content-end {
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+	}
 
-.justify-content-center {
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-}
+	&-content-between {
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+	}
 
-.justify-content-end {
-	-webkit-box-pack: end;
-	-ms-flex-pack: end;
-	justify-content: flex-end;
-}
-
-.justify-content-between {
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-}
-
-.justify-content-around {
-	-ms-flex-pack: distribute;
-	justify-content: space-around;
-}
-
-.d-flex img {
-	align-self: center;
+	&-content-around {
+		-ms-flex-pack: distribute;
+		justify-content: space-around;
+	}
 }
 
 /* column structure */
@@ -108,92 +116,113 @@ $grid-columns: 12;
 
 $sides: (top, bottom, left, right);
 
-@each $bp-key, $bp in $breakpoints {
-		
-		@if $bp-key == xs{
-			@for $i from 1 through $grid-columns {
-				.cell-#{$i} {
-					width: percentage($i / $grid-columns);
+@each $bp-key,
+$bp in $breakpoints {
+
+	@if $bp-key==xs {
+		@for $i from 1 through $grid-columns {
+			.cell-#{$i} {
+				width: percentage($i / $grid-columns);
+			}
+		}
+
+		@each $space in $spaceamounts {
+			@each $side in $sides {
+
+				// margin 
+				.m#{str-slice($side, 0, 1)}-#{$space} {
+					margin-#{$side}: #{$space}px;
+				}
+
+				// padding
+				.p#{str-slice($side, 0, 1)}-#{$space} {
+					padding-#{$side}: #{$space}px;
 				}
 			}
-	
-			@each $space in $spaceamounts {
-				@each $side in $sides {
-					// margin 
-					.m#{str-slice($side, 0, 1)}-#{$space}{
-						margin-#{$side}: #{$space}px;
-					}
-					// padding
-					.p#{str-slice($side, 0, 1)}-#{$space}{
-						padding-#{$side}: #{$space}px;
-					} 					
-				}
-			}
-	
-			.cell-none { display: none; }
-			.cell-block { display: block; } 
-		} @else{
-			@include respond-above($bp-key) {
+		}
+
+		.cell-none {
+			display: none;
+		}
+
+		.cell-block {
+			display: block;
+		}
+	}
+
+	@else {
+		@include respond-above($bp-key) {
 			@for $i from 1 through $grid-columns {
 				.cell-#{$bp-key}-#{$i} {
 					width: percentage($i / $grid-columns);
 				}
 			}
-	
+
 			@each $space in $spaceamounts {
 				@each $side in $sides {
+
 					// margin 
-					.m#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space}{
+					.m#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space} {
 						margin-#{$side}: #{$space}px;
 					}
+
 					// padding
-					.p#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space}{
+					.p#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space} {
 						padding-#{$side}: #{$space}px;
-					}					
+					}
 				}
 			}
-	
-			.cell-#{$bp-key}-none { display: none; }
-			.cell-#{$bp-key}-block { display: block; } 
-		}		
+
+			.cell-#{$bp-key}-none {
+				display: none;
+			}
+
+			.cell-#{$bp-key}-block {
+				display: block;
+			}
+		}
 	}
 }
 
 /* text alignment */
-.text-center {
-	text-align: center;
-}
+.text {
+	&-center {
+		text-align: center;
+	}
 
-.text-right {
-	text-align: right;
-}
+	&-right {
+		text-align: right;
+	}
 
-.text-left {
-	text-align: left;
-}
+	&-left {
+		text-align: left;
+	}
 
-.text-justify {
-	text-align: justify;
+	&-justify {
+		text-align: justify;
+	}
 }
 
 /* wordpress align class */
-.alignnone {
-	float: none;
-	margin: 20px 0;
-}
+.align {
+	&none {
+		float: none;
+		margin: 20px 0;
+	}
 
-.aligncenter {
-	display: block;
-	clear: both;
-	margin: 20px auto;
-}
+	&center {
+		display: block;
+		clear: both;
+		margin: 20px auto;
+	}
 
-.alignleft {
-	float: left;
-	margin: 0 20px 20px 0;
-}
+	&left {
+		float: left;
+		margin: 0 20px 20px 0;
+	}
 
-.alignright {
-	float: right;
-	margin: 0 0 20px 20px;
+	&right {
+		float: right;
+		margin: 0 0 20px 20px;
+	}
 }
